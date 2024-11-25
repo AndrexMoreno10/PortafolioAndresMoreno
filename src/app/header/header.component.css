@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    background-color: rgb(2 6 23);
+}
+
+.main {
+    margin-bottom: 10px;
+}
+
+/*-----------------ESTILOS HEADER-------------------*/
+
+/* Barra encabezado header*/
+.header {
+    background-color: rgb(2 6 23);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    text-align: center;
+
+}
+
+/*Header Logo*/
+.header__logo {
+    color: #fff;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+
+/*Header logo modificacion*/
+.header__logo span {
+    color: #38b6ff;
+}
+
+
+/*Elementos Li*/
+.header__nav__item {
+    display: inline-block;
+}
+
+/*Elementos link*/
+.header__nav__item a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 50px;
+    position: relative;
+}
+
+.header__nav__item a:focus:after,
+.header__nav__item a:hover:after,
+.header__nav__item a:active:after {
+    width: 100%;
+    left: 0%;
+}
+
+.header__nav__item a:after {
+    content: "";
+    pointer-events: none;
+    bottom: -5px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #38b6ff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+.header__nav__item a.active:after {
+    width: 100%;
+    left: 0%;
+}
+
+
+
+/*Iconos redes sociales*/
+.header__redes-sociales i {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 30px;
+}
+
+.header__redes-sociales i:hover {
+    opacity: 0.7;
+}
+
