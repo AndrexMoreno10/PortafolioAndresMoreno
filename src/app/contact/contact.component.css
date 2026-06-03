@@ -1,0 +1,418 @@
+/* ── ANIMACIÓN scroll reveal ── */
+.contact__header,
+.contact__card,
+.contact__form-wrap {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+:host.is-visible .contact__header              { opacity: 1; transform: translateY(0); transition-delay: 0s;     }
+:host.is-visible .contact__card:nth-child(1)   { opacity: 1; transform: translateY(0); transition-delay: 0.10s; }
+:host.is-visible .contact__card:nth-child(2)   { opacity: 1; transform: translateY(0); transition-delay: 0.18s; }
+:host.is-visible .contact__card:nth-child(3)   { opacity: 1; transform: translateY(0); transition-delay: 0.26s; }
+:host.is-visible .contact__card:nth-child(4)   { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
+:host.is-visible .contact__form-wrap           { opacity: 1; transform: translateY(0); transition-delay: 0.14s; }
+
+/* ══════════════════════════════════════
+   SECCIÓN BASE
+══════════════════════════════════════ */
+.contact {
+  background:
+    radial-gradient(ellipse 55% 65% at 88% 25%, rgba(56, 182, 255, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 60% at 12% 70%, rgba(56, 182, 255, 0.05) 0%, transparent 70%),
+    rgb(2 6 23);
+  padding: 100px 70px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Resplandor sutil de fondo centrado */
+.contact::before {
+  content: '';
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(56, 182, 255, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact__inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.contact__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.contact__label {
+  color: #38b6ff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.contact__title {
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+}
+
+.contact__title span {
+  color: #38b6ff;
+}
+
+.contact__subtitle {
+  color: #94a3b8;
+  font-size: 17px;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Body: 2 columnas ── */
+.contact__body {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ══════════════════════════════════════
+   CARDS DE CONTACTO
+══════════════════════════════════════ */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact__card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid transparent;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease,
+              box-shadow 0.3s ease;
+  position: relative;
+}
+
+.contact__card:nth-child(1):hover { border-left-color: #38b6ff; }
+.contact__card:nth-child(2):hover { border-left-color: #22c55e; }
+.contact__card:nth-child(3):hover { border-left-color: #0a66c2; }
+.contact__card:nth-child(4):hover { border-left-color: #94a3b8; }
+
+.contact__card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20);
+}
+
+/* Ícono del card */
+.contact__card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(56, 182, 255, 0.10);
+  border: 1px solid rgba(56, 182, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38b6ff;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact__card:hover .contact__card-icon {
+  box-shadow: 0 0 14px rgba(56, 182, 255, 0.22);
+}
+
+.contact__card-icon--green {
+  background: rgba(34, 197, 94, 0.10);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #22c55e;
+}
+
+.contact__card:hover .contact__card-icon--green {
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.20);
+}
+
+.contact__card-icon--linkedin {
+  background: rgba(10, 102, 194, 0.12);
+  border-color: rgba(10, 102, 194, 0.30);
+  color: #0a66c2;
+}
+
+.contact__card:hover .contact__card-icon--linkedin {
+  box-shadow: 0 0 14px rgba(10, 102, 194, 0.20);
+}
+
+.contact__card-icon--github {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.contact__card:hover .contact__card-icon--github {
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.10);
+}
+
+/* Texto del card */
+.contact__card-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact__card-label {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 3px;
+}
+
+.contact__card-value {
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.contact__card:hover .contact__card-value {
+  color: #ffffff;
+}
+
+/* Flecha */
+.contact__card-arrow {
+  color: rgba(255, 255, 255, 0.18);
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact__card:hover .contact__card-arrow {
+  color: rgba(255, 255, 255, 0.60);
+  transform: translate(2px, -2px);
+}
+
+/* ══════════════════════════════════════
+   FORMULARIO
+══════════════════════════════════════ */
+.contact__form-wrap {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(56, 182, 255, 0.12);
+  border-radius: 20px;
+  padding: 40px 38px;
+  position: relative;
+}
+
+/* Línea de brillo en el borde superior — detalle premium */
+.contact__form-wrap::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 182, 255, 0.5), transparent);
+  border-radius: 0 0 4px 4px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact__field-label {
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.contact__field-input,
+.contact__field-textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 13px 16px;
+  color: #e2e8f0;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact__field-input::placeholder,
+.contact__field-textarea::placeholder {
+  color: #334155;
+  font-weight: 400;
+}
+
+.contact__field-input:focus,
+.contact__field-textarea:focus {
+  border-color: rgba(56, 182, 255, 0.45);
+  background: rgba(56, 182, 255, 0.04);
+  box-shadow: 0 0 0 3px rgba(56, 182, 255, 0.07);
+}
+
+.contact__field-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* ── Botón submit — WhatsApp verde ── */
+.contact__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #25d366 0%, #1ebe5d 100%);
+  border: none;
+  border-radius: 13px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.28);
+  position: relative;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+/* Brillo interno superior */
+.contact__submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 100%);
+  border-radius: 13px 13px 0 0;
+  pointer-events: none;
+}
+
+.contact__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(37, 211, 102, 0.40);
+}
+
+.contact__submit:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 12px rgba(37, 211, 102, 0.25);
+}
+
+.contact__submit i {
+  font-size: 18px;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.contact__footer {
+  margin-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 28px 0;
+  text-align: center;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.contact__footer span {
+  color: #38b6ff;
+  font-weight: 700;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .contact {
+    padding: 80px 40px 0;
+  }
+
+  .contact__body {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .contact__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact {
+    padding: 70px 24px 0;
+  }
+
+  .contact__title {
+    font-size: 36px;
+  }
+
+  .contact__form-wrap {
+    padding: 28px 20px;
+  }
+
+  .contact__form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__info {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__card {
+    padding: 16px 16px;
+  }
+}

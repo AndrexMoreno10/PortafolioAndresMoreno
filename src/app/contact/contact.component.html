@@ -1,0 +1,132 @@
+<section class="contact" id="contact-wrapper">
+  <div class="contact__inner">
+
+    <!-- HEADER -->
+    <div class="contact__header">
+      <p class="contact__label">Hablemos</p>
+      <h2 class="contact__title">¿Tienes un <span>proyecto</span>?</h2>
+      <p class="contact__subtitle">
+        Cuéntame tu idea y en menos de 24 horas te respondo con una propuesta.
+      </p>
+    </div>
+
+    <div class="contact__body">
+
+      <!-- LADO IZQUIERDO: info + redes -->
+      <div class="contact__info">
+
+        <a href="mailto:adp2333@gmail.com" class="contact__card">
+          <div class="contact__card-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="contact__card-text">
+            <p class="contact__card-label">Email</p>
+            <p class="contact__card-value">adp2333&#64;gmail.com</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square contact__card-arrow"></i>
+        </a>
+
+        <a href="https://wa.me/573205426119" target="_blank" rel="noopener noreferrer" class="contact__card">
+          <div class="contact__card-icon contact__card-icon--green">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="contact__card-text">
+            <p class="contact__card-label">WhatsApp</p>
+            <p class="contact__card-value">+57 320 542 6119</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square contact__card-arrow"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/andresdaniel-moreno-prieto/" target="_blank" rel="noopener noreferrer" class="contact__card">
+          <div class="contact__card-icon contact__card-icon--linkedin">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <div class="contact__card-text">
+            <p class="contact__card-label">LinkedIn</p>
+            <p class="contact__card-value">andresdaniel-moreno-prieto</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square contact__card-arrow"></i>
+        </a>
+
+        <a href="https://github.com/AndrexMoreno10" target="_blank" rel="noopener noreferrer" class="contact__card">
+          <div class="contact__card-icon contact__card-icon--github">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="contact__card-text">
+            <p class="contact__card-label">GitHub</p>
+            <p class="contact__card-value">AndrexMoreno10</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square contact__card-arrow"></i>
+        </a>
+
+      </div>
+
+      <!-- LADO DERECHO: formulario -->
+      <div class="contact__form-wrap">
+        <form class="contact__form" (submit)="onSubmit($event)">
+
+          <div class="contact__form-row">
+            <div class="contact__field">
+              <label class="contact__field-label" for="cf-nombre">Nombre</label>
+              <input
+                id="cf-nombre"
+                class="contact__field-input"
+                type="text"
+                placeholder="Tu nombre"
+                #nombre
+                required
+              />
+            </div>
+            <div class="contact__field">
+              <label class="contact__field-label" for="cf-email">Email</label>
+              <input
+                id="cf-email"
+                class="contact__field-input"
+                type="email"
+                placeholder="tu@email.com"
+                #email
+              />
+            </div>
+          </div>
+
+          <div class="contact__field">
+            <label class="contact__field-label" for="cf-asunto">Asunto</label>
+            <input
+              id="cf-asunto"
+              class="contact__field-input"
+              type="text"
+              placeholder="¿En qué puedo ayudarte?"
+              #asunto
+            />
+          </div>
+
+          <div class="contact__field">
+            <label class="contact__field-label" for="cf-mensaje">Mensaje</label>
+            <textarea
+              id="cf-mensaje"
+              class="contact__field-textarea"
+              placeholder="Cuéntame los detalles de tu proyecto..."
+              rows="5"
+              #mensaje
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="contact__submit">
+            <i class="fa-brands fa-whatsapp"></i>
+            Enviar por WhatsApp
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="contact__footer">
+    <p>© 2026 Andres Moreno · Hecho con <span>Angular</span> &amp; mucho café ☕</p>
+  </div>
+
+</section>

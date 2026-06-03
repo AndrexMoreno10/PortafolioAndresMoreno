@@ -1,32 +1,90 @@
+<!-- Orbs fuera del max-width container — posicionados relativo al :host (full width) -->
+<div class="hero__orb hero__orb--1"></div>
+<div class="hero__orb hero__orb--2"></div>
+<div class="hero__orb hero__orb--3"></div>
+
 <section class="hero" id="home-wrapper">
-    <div class="hero__content">
-        <p class="hero__intro">Hola, soy</p>
 
-        <h2 class="hero__title">Andres Moreno</h2>
+  <!-- Cuadrícula de puntos de fondo -->
+  <div class="hero__grid-bg"></div>
 
-        <h3 class="hero__subtitle">
-            Full Stack Developer | Software Engineer
-        </h3>
+  <!-- CONTENIDO IZQUIERDO -->
+  <div class="hero__content">
 
-        <p class="hero__description">
-            Desarrollo todo tipo de APIs modernas, responsivas y atractivas,
-            enfocadas en brindar una gran experiencia al usuario.
-        </p>
-
-        <div class="hero__buttons">
-            <a href="#projects-wrapper" class="hero__btn hero__btn--primary">
-                Ver proyectos
-            </a>
-
-            <a href="#contact-wrapper" class="hero__btn hero__btn--secondary">
-                Contáctame
-            </a>
-        </div>
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      Disponible para proyectos
     </div>
 
-    <div class="hero__image">
-        <div class="hero__glow"></div>
-        <div class="hero__circle"></div>
-        <img class="hero__photo" src="assets/imagenWeb.png" alt="Andres Moreno">
+    <p class="hero__intro">Hola, soy</p>
+    <h2 class="hero__title">Andres Moreno</h2>
+
+    <!-- Prompt terminal con roles alternantes CSS -->
+    <h3 class="hero__subtitle">
+      <span class="hero__prompt">&gt;</span>
+      <span class="hero__cursor">|</span>
+      <span class="hero__roles">
+        <span class="hero__role hero__role--1">Software Engineer</span>
+        <span class="hero__role hero__role--2">Creative Director</span>
+      </span>
+    </h3>
+
+    <p class="hero__description">
+      Potenciamos marcas con tecnología, creatividad y estrategia digital.<br>
+      <span class="hero__desc-highlight">Identidad · Software · Publicidad </span> — hacemos crecer tu negocio.
+
+    </p>
+
+    <div class="hero__buttons">
+      <a href="#projects-wrapper" class="hero__btn hero__btn--primary">
+        Ver proyectos
+      </a>
+      <a href="https://wa.me/573205426119" target="_blank" rel="noopener noreferrer" class="hero__btn hero__btn--secondary">
+        <i class="fa-brands fa-whatsapp"></i> Contáctame
+      </a>
     </div>
+
+    <div class="hero__social">
+      <a href="https://github.com/AndrexMoreno10" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
+        <img src="assets/github.svg" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/andresdaniel-moreno-prieto/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
+        <img src="assets/linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://wa.me/573205426119" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="WhatsApp">
+        <img src="assets/whapsapp.svg" alt="WhatsApp" />
+      </a>
+    </div>
+
+  </div>
+
+  <!-- IMAGEN DERECHA -->
+  <div class="hero__image">
+
+    <!-- Anillo exterior girando -->
+    <div class="hero__ring-orbit">
+      <span class="hero__orbit-dot"></span>
+    </div>
+
+    <!-- Brillo + círculo originales -->
+    <div class="hero__glow"></div>
+    <div class="hero__circle"></div>
+
+    <!-- Chips flotantes de servicios -->
+    <div class="hero__chip hero__chip--1">
+      <i class="fa-brands fa-meta"></i> META ADS
+    </div>
+    <div class="hero__chip hero__chip--2">
+      <i class="fa-solid fa-code"></i> SOFTWARE DEV
+    </div>
+    <div class="hero__chip hero__chip--3">
+      <i class="fa-solid fa-palette"></i> BRANDING
+    </div>
+    <div class="hero__chip hero__chip--4">
+      <i class="fa-solid fa-clapperboard"></i> AUDIOVISUAL
+    </div>
+
+    <img class="hero__photo" src="assets/imagenWeb.png" alt="Andres Moreno">
+  </div>
+
 </section>
