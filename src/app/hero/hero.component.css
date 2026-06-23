@@ -397,11 +397,30 @@
   transform: translateY(-50%);
   border-radius: 50%;
   background: radial-gradient(circle,
-    rgba(56, 182, 255, 0.20) 0%,
-    rgba(56, 182, 255, 0.08) 40%,
+    rgba(56, 182, 255, 0.18) 0%,
+    rgba(56, 182, 255, 0.06) 50%,
     rgba(56, 182, 255, 0) 72%);
   filter: blur(18px);
   z-index: 0;
+}
+
+/* Luz de backlight detrás de la foto */
+.hero__photo-light {
+  position: absolute;
+  width: 320px;
+  height: 420px;
+  right: 95px;
+  top: 54%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 42%,
+    rgba(56, 182, 255, 0.55) 0%,
+    rgba(56, 182, 255, 0.28) 28%,
+    rgba(14, 165, 233, 0.10) 55%,
+    transparent 72%);
+  filter: blur(28px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Círculo principal */
